@@ -1,0 +1,35 @@
+<div class="container">
+    <h3 class=" text-center chat_header">Hello {{currentUser}}! Chat with your better half</h3>
+    <div class="messaging">
+        <div class="inbox_msg">
+            <div class="mesgs">
+                <div class="msg_history">
+                    <div *ngFor="let message of service.messages">
+                        <div class="incoming_msg" *ngIf='service.messages.length > 0'>
+                            <div class="incoming_msg_img"> </div>
+                            <div class="received_msg">
+                                <div class="received_withd_msg" *ngFor="let message of service.messages">
+                                    <p>
+                                        {{message}}
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <form (ngSubmit)="startChat()" #chatForm="ngForm" autocomplete="off">
+                    <div class="type_msg">
+                        <div class="input_msg_write">
+                            <input type="text" class="write_msg" id="message" name="message" [(ngModel)]="message" placeholder="Type a message" />
+                            <button class="msg_send_btn" type="button" (click)="startChat()"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
