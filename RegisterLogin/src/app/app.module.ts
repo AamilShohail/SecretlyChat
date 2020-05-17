@@ -1,3 +1,4 @@
+import { VirgilService } from './shared/virgil.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -53,7 +54,7 @@ import { ChatsService } from './shared/chats.service';
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
-  }, ChartService, ChatService, ChatsService],
+  }, ChartService, ChatService, ChatsService, VirgilService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
